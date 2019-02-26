@@ -1,0 +1,22 @@
+{% extends 'r_2_app/songs.html' %}
+
+
+{% block content %}
+<table class="table">
+    <tr> {# List band, song, ablum and details, which links you to the page that gives links to lyrics and audio #}
+        <th>Band</th>
+        <th>Song</th>
+        <th>Album</th>
+        <th>Details</th>
+    </tr>
+    <tr>
+        <td>{{current_song.song_band }}</td>
+        <td>{{current_song.song_title}}</td>
+        <td>{{current_song.song_album}}</td>
+        <td><a href="{% url 'links' current_song.song_id %}">Details</a></td> {#goes to nickname 'link and carries id #}
+    </tr>
+
+</table>
+
+
+{% endblock content %}
